@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="zh-cmn" xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh">
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]> <html class="no-js"> <![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<meta content=" 蜻蜓fm在线收听_最好的网络收音机|广播电台在线收听平台" name="title">
+<meta content=" 收音机,电台,网上电台,广播,在线广播,网络广播,广播电台,网络电台,在线电台,电台在线收听,广播电台在线收听,网络电台在线收听,在线收听电台,fm收音机,网络收音机,广播下载,在线收音机,收音机软件下载,电台软件下载,网络收音机下载,蜻蜓.fm" name="keywords">
+<meta content=" 蜻蜓fm是麦克风传媒自主研发运营的一款基于互联网的电台聚合服务。蜻蜓.fm收音机全面收录中国大陆、港澳台地区、海外地区的广播电台，打造一款属于中国人自己的广播应用。蜻蜓.fm已与数百个电台、DJ合作,拥有的十三个分类、六大功能、三大特色，两种模式为广大广播迷朋友打造跨地域收听广播的完美体验。" name="description">
+<meta name=fragment content="!">
+<meta content="app-id=462148325" name="apple-itunes-app">
+<meta property="qc:admins" content="200106172674167665">
+<title>蜻蜓fm在线收听_最好的网络收音机|广播电台在线收听平台</title>
+<link href="/static/css/reset.css" rel="stylesheet"/>
+<link href="/static/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="/static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+
+
+
+<link href="/static/vendor/jscrollpane/style/jquery.jscrollpane.css" rel="stylesheet" media="all"/>
+<link href="/static/components/unslider/unslider.css" rel="stylesheet"/>
+<link href="/static/css/main.css?v=22" rel="stylesheet"/>
+<link href="/static/css/channel.css?v=1" rel="stylesheet" />
+<link href="/static/css/livecategory.css?v=2" rel="stylesheet" />
+<link href="//cdn.bootcss.com/video.js/4.12.5/video-js.css" rel="stylesheet">
+
+
+<!--[if lt IE 8]>
+<link href="/static/vendor/css/bootstrap-ie7.css" rel="stylesheet" />
+<link href="/static/vendor/fontawesome-3.2.1/css/font-awesome.min.css" rel="stylesheet" />
+<link href="/static/vendor/fontawesome-3.2.1/css/font-awesome-ie7.min.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="/static/vendor/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="/static/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="/static/vendor/jquery-ui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/static/vendor/jquery_lazyload/jquery.lazyload.js"></script>
+<script type="text/javascript" src="/static/vendor/moment/min/moment.min.js"></script>
+<script type="text/javascript" src="/static/vendor/swfobject/swfobject/src/swfobject.js"></script>
+<script type="text/javascript" src="/static/js/player/qt_player.js"></script>
+<script type="text/javascript" id="bdshare_js" data="type=button&amp;uid=6621079"></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+(function () {
+var browser=navigator.appName;
+if (location.pathname == '/sp/cnr389') return;
+if (browser=="Microsoft Internet Explorer") {
+var b_version=navigator.appVersion;
+var version=b_version.split(";");
+var trim_Version=version[1].replace(/[ ]/g,"");
+if(trim_Version=="MSIE6.0")
+{
+if (location.pathname.search('/upgrade_ie') < 0) {location.href='/upgrade_ie'; }
+return;
+}
+if (trim_Version=="MSIE7.0") {
+location.pathname = '/home_ie7';
+}
+}
+})();
+</script>
+
+
+<script src="/static/vendor/jscrollpane/script/jquery.mousewheel.js"></script>
+<script src="/static/vendor/jscrollpane/script/jquery.jscrollpane.min.js"></script>
+<script src="/static/components/unslider/unslider.js?v=3"></script>
+<script src="/static/js/player/qt_player.js"></script>
+<script src="/static/js/main.js"></script>
+<script src="/static/js/track/track.js"></script>
+<script src="//cdn.bootcss.com/video.js/4.12.5/video.js"></script>
+
+
+<script type="text/javascript">
+$(function() {
+window.isloaded=false;
+switchSubPath(); // ("/s/recommend");
+// $.get("http://apiweb.qingting.fm/local_radio_category", function(data) {
+// $(".nav-template[data-category=100002] .sub-categories-wrapper a:first").
+// attr("href", "/categories/" + data.local_radio_category_id).
+// attr("data-switch-url", "/s/livecategories/" + data.local_radio_category_id);
+// }, 'json');
+});
+var internum;
+window.yes_man = null;
+function isloading()
+{
+if(window.yes_man != null){
+window.yes_man.$wrapper.trigger("qtPlayer.onCurrentTimeChange", [window.yes_man.curProgram, window.player2.currentTime()]);
+}
+}
+internum=setInterval("isloading()",1000);
+</script>
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="/static/vendor/html5shiv/dist/html5shiv-printshiv.min.js"></script>
+<script type="text/javascript" src="/static/vendor/respond/dest/respond.min.js"></script>
+<![endif]-->
+<!-- define console for IEs -->
+<script type="text/javascript">
+$(function() {
+//alert("check console");
+if(!window.console) {
+// alert("console to be defied.");
+var c = {};
+c.log = function() {};
+c.error = function() {};
+window.console = c;
+}
+});
+</script>
+
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function () {
+var hm = document.createElement("script");
+hm.src = "//hm.baidu.com/hm.js?bbe853b61e20780bcb59a7ea2d051559";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+<body class="main">
+<div class="main-wrapper">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navtop-area">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navtop">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="/home" data-switch-url="/s/home">
+<img height="29" src="/static/images/logo_beta.png"/>
+</a>
+</div>
+<div class="collapse navbar-collapse" id="navtop">
+<ul class="nav navbar-nav">
+<li id="nav-recommend"><a href="/home" data-switch-url="/s/home">精选</a></li>
+<li id="nav-radio" data-category-entry="100002">
+<a href="javascript:void(0);">
+广播电台
+<i class="fa fa-angle-down icon-angle-down to-expand"></i>
+<i class="fa fa-angle-up icon-angle-up to-collapse"></i>
+</a>
+</li>
+<li id="nav-content" data-category-entry="507">
+<a href="javascript:void(0);">
+内容分类
+<i class="fa fa-angle-down icon-angle-down to-expand"></i>
+<i class="fa fa-angle-up icon-angle-up to-collapse"></i>
+</a>
+</li>
+<li id="nav-billboard"><a href="/billboard" data-switch-url="/s/billboard">排行榜</a></li>
+<li id="nav-zb"><a href="/open/zb" data-switch-url="/s/open/zb">主播<img src="/static/images/open/hot.png" style="height: 15px; margin-left: 5px;" /></a></li>
+<!--<li id="nav-campus"><a href="/campus" data-switch-url="/s/campus">校园招聘</a></li>-->
+<li id="nav-aboutus"><a href="/aboutus" data-switch-url="/s/aboutus">关于我们</a></li>
+</ul>
+<div class="search-container col-sm-4 col-md-4 pull-right">
+<form class="navbar-form navbar-search" role="search" id="search-form">
+<div class="input-group search-bar">
+<input type="text" class="form-control" id="search-term">
+<div class="input-group-btn">
+<a class="btn btn-default" id="search-submit"><i class="fa fa-search icon-search"></i></a>
+</div>
+</div>
+</form>
+</div>
+</div>
+</nav>
+<div class="main-content bg" tabindex="0">
+</div>
+<div class="main-content-js hide">
+</div>
+<div id="category-nav-templates" class='hide'>
+
+<div class="nav-template" data-category="9">
+<ol class="breadcrumb">
+<li class="first"><i class="fa fa-circle icon-circle"></i></li>
+
+<li><a href="javascript:void(0);" data-nav-to-category="100002">广播电台</a></li>
+
+<li class="active">省市台</li>
+</ol>
+<div class="sub-categories-wrapper">
+<div class="sub-categories clearfix">
+
+
+<a href="/categories/1209" data-switch-url="/s/livecategories/1209">
+
+
+<div class="category-block-no-icon">
+
+
+<div class="category-block-img category-block-img-11">
+
+</div>
+<div class="category-block-title">
+<h5> 北京 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1208" data-switch-url="/s/livecategories/1208">
+
+
+<div class="category-block-no-icon">
+
+
+<div class="category-block-img category-block-img-10">
+
+</div>
+<div class="category-block-title">
+<h5> 上海 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1216" data-switch-url="/s/livecategories/1216">
+
+
+<div class="category-block-no-icon">
+
+
+<div class="category-block-img category-block-img-23">
+
+</div>
+<div class="category-block-title">
+<h5> 天津 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1219" data-switch-url="/s/livecategories/1219">
+
+
+<div class="category-block-no-icon">
+
+
+<div class="category-block-img category-block-img-26">
+
+</div>
+<div class="category-block-title">
+<h5> 重庆 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1215" data-switch-url="/s/livecategories/1215">
+
+
+<div class="category-block-no-icon">
+
+
+<div class="category-block-img category-block-img-22">
+
+</div>
+<div class="category-block-title">
+<h5> 广东 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1212" data-switch-url="/s/livecategories/1212">
+
+
+<div class="category-block-no-icon">
+
+
+<div class="category-block-img category-block-img-19">
+
+</div>
+<div class="category-block-title">
+<h5> 浙江 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1210" data-switch-url="/s/livecategories/1210">
+
+
+<div class="category-block-no-icon">
+
+
+<div class="category-block-img category-block-img-17">
+
+</div>
+<div class="category-block-title">
+<h5> 江苏 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1213" data-switch-url="/s/livecategories/1213">
+
+
+<div class="category-block-no-icon">
+
+
+<div class="category-block-img category-block-img-20">
+
+</div>
+<div class="category-block-title">
+<h5> 湖南 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1211" data-switch-url="/s/livecategories/1211">
+
+
+<div class="category-block-no-icon">
+
+
+<div class="category-block-img category-block-img-18">
+
+</div>
+<div class="category-block-title">
+<h5> 四川 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1217" data-switch-url="/s/livecategories/1217">
+
+
+<div class="category-block-no-icon">
+
+
+<div class="category-block-img category-block-img-24">
+
+</div>
+<div class="category-block-title">
+<h5> 山西 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1218" data-switch-url="/s/livecategories/1218">
+
+
+<div class="category-block-no-icon">
+
+
+<div class="category-block-img category-block-img-25">
+
+</div>
+<div class="category-block-title">
+<h5> 河南 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1220" data-switch-url="/s/livecategories/1220">
+
+
+<div class="category-block-no-icon">
+
+
+<div class="category-block-img category-block-img-27">
+
+</div>
+<div class="category-block-title">
+<h5> 湖北 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1221" data-switch-url="/s/livecategories/1221">
+
+
+<div class="category-block-no-icon">
+
+
+<div class="category-block-img category-block-img-28">
+
+</div>
+<div class="category-block-title">
+<h5> 黑龙江 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1214" data-switch-url="/s/livecategories/1214">
+
+
+<div class="category-block-no-icon">
+
+
+<div class="category-block-img category-block-img-21">
+
+</div>
+<div class="category-block-title">
+<h5> 辽宁 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1222" data-switch-url="/s/livecategories/1222">
+
+
+<div class="category-block-no-icon">
+
+
+<div class="category-block-img category-block-img-30">
+
+</div>
+<div class="category-block-title">
+<h5> 河北 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1223" data-switch-url="/s/livecategories/1223">
+
+
+<div class="category-block-no-icon">
+
+
+<div class="category-block-img category-block-img-31">
+
+</div>
+<div class="category-block-title">
+<h5> 山东 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1224" data-switch-url="/s/livecategories/1224">
+
+
+<div class="category-block-no-icon">
+
+
+<div class="category-block-img category-block-img-32">
+
+</div>
+<div class="category-block-title">
+<h5> 安徽 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1226" data-switch-url="/s/livecategories/1226">
+
+
+<div class="category-block-no-icon">
+
+
+<div class="category-block-img category-block-img-34">
+
+</div>
+<div class="category-block-title">
+<h5> 福建 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1227" data-switch-url="/s/livecategories/1227">
+
+
+<div class="category-block-no-icon">
+
+
+<div class="category-block-img category-block-img-36">
+
+</div>
+<div class="category-block-title">
+<h5> 广西 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1228" data-switch-url="/s/livecategories/1228">
+
+
+<div class="category-block-no-icon">
+
+
+<div class="category-block-img category-block-img-37">
+
+</div>
+<div class="category-block-title">
+<h5> 贵州 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1237" data-switch-url="/s/livecategories/1237">
+
+
+<div class="category-block-no-icon">
+
+
+<div class="category-block-img category-block-img-46">
+
+</div>
+<div class="category-block-title">
+<h5> 云南 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1229" data-switch-url="/s/livecategories/1229">
+
+
+<div class="category-block-no-icon">
+
+
+<div class="category-block-img category-block-img-38">
+
+</div>
+<div class="category-block-title">
+<h5> 江西 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1230" data-switch-url="/s/livecategories/1230">
+
+
+<div class="category-block-no-icon">
+
+
+<div class="category-block-img category-block-img-39">
+
+</div>
+<div class="category-block-title">
+<h5> 吉林 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1241" data-switch-url="/s/livecategories/1241">
+
+
+<div class="category-block-no-icon">
+
+
+<div class="category-block-img category-block-img-51">
+
+</div>
+<div class="category-block-title">
+<h5> 陕西 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1225" data-switch-url="/s/livecategories/1225">
+
+
+<div class="category-block-no-icon">
+
+
+<div class="category-block-img category-block-img-33">
+
+</div>
+<div class="category-block-title">
+<h5> 甘肃 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1231" data-switch-url="/s/livecategories/1231">
+
+
+<div class="category-block-no-icon">
+
+
+<div class="category-block-img category-block-img-40">
+
+</div>
+<div class="category-block-title">
+<h5> 宁夏 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1235" data-switch-url="/s/livecategories/1235">
+
+
+<div class="category-block-no-icon">
+
+
+<div class="category-block-img category-block-img-44">
+
+</div>
+<div class="category-block-title">
+<h5> 内蒙古 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1234" data-switch-url="/s/livecategories/1234">
+
+
+<div class="category-block-no-icon">
+
+
+<div class="category-block-img category-block-img-43">
+
+</div>
+<div class="category-block-title">
+<h5> 海南 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1233" data-switch-url="/s/livecategories/1233">
+
+
+<div class="category-block-no-icon">
+
+
+<div class="category-block-img category-block-img-42">
+
+</div>
+<div class="category-block-title">
+<h5> 西藏 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1232" data-switch-url="/s/livecategories/1232">
+
+
+<div class="category-block-no-icon">
+
+
+<div class="category-block-img category-block-img-41">
+
+</div>
+<div class="category-block-title">
+<h5> 青海 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1236" data-switch-url="/s/livecategories/1236">
+
+
+<div class="category-block-no-icon">
+
+
+<div class="category-block-img category-block-img-45">
+
+</div>
+<div class="category-block-title">
+<h5> 新疆 </h5>
+</div>
+</div>
+</a>
+
+</div>
+</div>
+</div>
+
+<div class="nav-template" data-category="100002">
+<ol class="breadcrumb">
+<li class="first"><i class="fa fa-circle icon-circle"></i></li>
+
+<li class="active">广播电台</li>
+</ol>
+<div class="sub-categories-wrapper">
+<div class="sub-categories clearfix">
+
+
+<a href="/categories/1242" data-switch-url="/s/livecategories/1242">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-local">
+
+</div>
+<div class="category-block-title">
+<h5> 本地台 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1242" data-switch-url="/s/livecategories/1242">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-54">
+
+</div>
+<div class="category-block-title">
+<h5> 国家台 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="javascript:void(0);" data-nav-to-category="9">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-9">
+
+</div>
+<div class="category-block-title">
+<h5> 省市台 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/categories/1243" data-switch-url="/s/livecategories/1243">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-60">
+
+</div>
+<div class="category-block-title">
+<h5> 网络台 </h5>
+</div>
+</div>
+</a>
+
+</div>
+</div>
+</div>
+
+<div class="nav-template" data-category="507">
+<ol class="breadcrumb">
+<li class="first"><i class="fa fa-circle icon-circle"></i></li>
+
+<li class="active">内容分类</li>
+</ol>
+<div class="sub-categories-wrapper">
+<div class="sub-categories clearfix">
+
+
+<a href="/supervcategories/208" data-switch-url="/s/supervcategories/208">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-521">
+
+</div>
+<div class="category-block-title">
+<h5> 小说 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/139" data-switch-url="/s/supervcategories/139">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-523">
+
+</div>
+<div class="category-block-title">
+<h5> 音乐 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/199" data-switch-url="/s/supervcategories/199">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-2733">
+
+</div>
+<div class="category-block-title">
+<h5> 头条 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/209" data-switch-url="/s/supervcategories/209">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-527">
+
+</div>
+<div class="category-block-title">
+<h5> 相声小品 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/200" data-switch-url="/s/supervcategories/200">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-3251">
+
+</div>
+<div class="category-block-title">
+<h5> 脱口秀 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/82" data-switch-url="/s/supervcategories/82">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-529">
+
+</div>
+<div class="category-block-title">
+<h5> 情感 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/107" data-switch-url="/s/supervcategories/107">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-2733">
+
+</div>
+<div class="category-block-title">
+<h5> 健康 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/212" data-switch-url="/s/supervcategories/212">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-2733">
+
+</div>
+<div class="category-block-title">
+<h5> 军事 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/213" data-switch-url="/s/supervcategories/213">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-531">
+
+</div>
+<div class="category-block-title">
+<h5> 历史 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/214" data-switch-url="/s/supervcategories/214">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-2733">
+
+</div>
+<div class="category-block-title">
+<h5> 儿童 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/210" data-switch-url="/s/supervcategories/210">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-547">
+
+</div>
+<div class="category-block-title">
+<h5> 娱乐 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/204" data-switch-url="/s/supervcategories/204">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-2733">
+
+</div>
+<div class="category-block-title">
+<h5> 女性 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/201" data-switch-url="/s/supervcategories/201">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-2733">
+
+</div>
+<div class="category-block-title">
+<h5> 搞笑 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/116" data-switch-url="/s/supervcategories/116">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-537">
+
+</div>
+<div class="category-block-title">
+<h5> 教育 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/126" data-switch-url="/s/supervcategories/126">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-2733">
+
+</div>
+<div class="category-block-title">
+<h5> 外语 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/74" data-switch-url="/s/supervcategories/74">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-1585">
+
+</div>
+<div class="category-block-title">
+<h5> 公开课 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/893" data-switch-url="/s/supervcategories/893">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-2733">
+
+</div>
+<div class="category-block-title">
+<h5> 文化 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/515" data-switch-url="/s/supervcategories/515">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-2733">
+
+</div>
+<div class="category-block-title">
+<h5> 评书 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/217" data-switch-url="/s/supervcategories/217">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-3276">
+
+</div>
+<div class="category-block-title">
+<h5> 戏曲 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/215" data-switch-url="/s/supervcategories/215">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-2733">
+
+</div>
+<div class="category-block-title">
+<h5> 财经 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/216" data-switch-url="/s/supervcategories/216">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-535">
+
+</div>
+<div class="category-block-title">
+<h5> 科技 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/207" data-switch-url="/s/supervcategories/207">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-2733">
+
+</div>
+<div class="category-block-title">
+<h5> 汽车 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/203" data-switch-url="/s/supervcategories/203">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-2733">
+
+</div>
+<div class="category-block-title">
+<h5> 体育 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/166" data-switch-url="/s/supervcategories/166">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-2733">
+
+</div>
+<div class="category-block-title">
+<h5> 校园 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/205" data-switch-url="/s/supervcategories/205">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-2733">
+
+</div>
+<div class="category-block-title">
+<h5> 游戏动漫 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/206" data-switch-url="/s/supervcategories/206">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-2733">
+
+</div>
+<div class="category-block-title">
+<h5> 广播剧 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/569" data-switch-url="/s/supervcategories/569">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-2733">
+
+</div>
+<div class="category-block-title">
+<h5> 电影 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/674" data-switch-url="/s/supervcategories/674">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-2733">
+
+</div>
+<div class="category-block-title">
+<h5> 旅游 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/671" data-switch-url="/s/supervcategories/671">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-2733">
+
+</div>
+<div class="category-block-title">
+<h5> 互动 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/732" data-switch-url="/s/supervcategories/732">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-2733">
+
+</div>
+<div class="category-block-title">
+<h5> 自媒体 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/751" data-switch-url="/s/supervcategories/751">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-2733">
+
+</div>
+<div class="category-block-title">
+<h5> 品牌电台 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/818" data-switch-url="/s/supervcategories/818">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-2733">
+
+</div>
+<div class="category-block-title">
+<h5> 时尚 </h5>
+</div>
+</div>
+</a>
+
+
+<a href="/supervcategories/837" data-switch-url="/s/supervcategories/837">
+
+
+<div class="category-block">
+
+
+<div class="category-block-img category-block-img-2733">
+
+</div>
+<div class="category-block-title">
+<h5> 中国之声 </h5>
+</div>
+</div>
+</a>
+
+</div>
+</div>
+</div>
+
+</div>
+<div id="body-top-shadow"></div>
+<div id="right-player">
+<div class="download clearfix">
+<img id="float-code" src="http://qingting-pic.b0.upaiyun.com/www/UpYunImage/bfdeeced09740a6ef2ffe88250f05b5e.png" style="display:none;">
+<a class="pull-left" id="qtios-download" style="width:50%" target="_blank" href="https://itunes.apple.com/cn/app/id506685538">
+<img src="/static/images/dl-ios.png"/>
+</a>
+<a class="pull-left" id="qtapk-download" style="width:50%" target="_blank" href="http://qingting.fm/app/download">
+<img src="/static/images/dl-android.png"/>
+</a>
+</div>
+<div class="player">
+<div class="play-info clearfix">
+<div class="cover">
+<a><img src="http://qingting-pic.b0.upaiyun.com/www/UpYunImage/06d4dd215d2c3bd6d305c78065015552.png"/></a>
+</div>
+<div class="text-info">
+<span class="channel-name">蜻蜓FM</span>
+<span class="program-name"></span>
+<span class="broadcasters"></span>
+</div>
+</div>
+<div class="controller">
+<div class="play-progress clearfix">
+<div class="bars">
+<div class="front-bar">
+<div class="fa fa-circle end-icon"></div>
+</div>
+</div>
+<div class="float-timer clearfix" style="display: none">
+<span>00:00</span>
+</div>
+</div>
+<div class="playtimes clearfix">
+<div class="starttime pull-left">00:00:00</div>
+<div class="endtime pull-right">00:00:00</div>
+</div>
+<div class="buttons play-control clearfix">
+<div class="block0-3">
+<a class="previous" href="javascript:void(0);"></a>
+</div>
+<div class="block1-3">
+<a class="play playable-play" href="javascript:void(0);"></a>
+</div>
+<div class="block2-3">
+<a class="next" href="javascript:void(0);"></a>
+</div>
+</div>
+<div class="buttons tool-control clearfix">
+<div class="menu-programs hide">
+<img src="/static/images/player/menu_programs.png"/>
+<ul></ul>
+</div>
+<div class="block0-4 menu">
+<a class="playlist" href="javascript:void(0);"></a>
+</div>
+<div class="volumebar hide">
+<div class="bars">
+<div class="frontbar">
+<div class="end-icon fa fa-minus"></div>
+</div>
+</div>
+</div>
+<div class="block1-4">
+<a class="volume" href="javascript:void(0);"></a>
+</div>
+<div class="block2-4" style="display:none;">
+<a class="fav" href="javascript:void(0);"></a>
+</div>
+<div class="block3-4" style="display:none;">
+<a class="share" href="javascript:void(0);"></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="popup">
+<div class="black-back"></div>
+<div class="qrcode">
+<img class="close" src="/static/images/popup_close.png" />
+<img class="code" src="/static/images/popup_download.png" />
+</div>
+</div>
+<div style="display:block;width:1px;height:1px;">
+<video id="myplayer" class="video-js vjs-default-skin" controls preload="none" width="1px" height="1px" data-setup='{"techOrder": ["flash"]}'>
+<source src="" type="video/mp4" />
+</video>
+</div>
+</body>
+
+</html>
